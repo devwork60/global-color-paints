@@ -1,36 +1,36 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Global Colors Company website
 
-## Getting Started
-
-First, run the development server:
+Single-page marketing site for Global Colors Company (HomeStyle Paints, BestWall, Tylac, Expresso, IBEX), converted from one static HTML file into Next.js (App Router), TypeScript and Tailwind CSS v4.
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # http://localhost:3000
+npm run build    # production build
+npm run lint
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Set `NEXT_PUBLIC_SITE_URL` (for example `https://example.com`) so Open Graph image URLs are absolute.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Path | What lives there |
+| --- | --- |
+| `src/app/globals.css` | Design tokens (colours, type scale, spacing, motion) and keyframes |
+| `src/app/(main)/page.tsx` | The page: Hero, Marquee, Brands, Audience, Product range, Colour studio, Why us, About, Dealer |
+| `src/components/typography/` | Heading, paragraph and text components. Use these, not raw tags |
+| `src/components/{button,inputField,layout,ui,icons}/` | Shared building blocks |
+| `src/components/pages/` | Section components, one folder per section (`navbar`, `footer`, `landing-page/*`) |
+| `src/constant/` | All copy and data, so components hold layout only |
+| `src/hooks/`, `src/utils/` | Shared hooks, the wall-recolour engine and form validation |
+| `public/assets/` | Images, logos and icons, served from `/assets/...` |
 
-## Learn More
+## Conventions
 
-To learn more about Next.js, take a look at the following resources:
+- Server Components by default. Client components are small islands: header state, nav menus, brand directory, hero and colour-studio wall painting, reveal and count-up, accordion, project slideshow, sector tabs, dealer form.
+- Styling is Tailwind utilities only. Colours, type sizes and spacing come from the tokens in `globals.css`.
+- Components stay under about 200 lines. Variants are props, not class overrides.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Known gaps
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- The dealer form validates in the browser only. It needs a backend before enquiries reach the sales team.
+- The footer shows "to be supplied" tags for the office address, WhatsApp number and working hours. These come from the source design and need client content.
