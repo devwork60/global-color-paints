@@ -54,7 +54,7 @@ const DealerForm = () => {
         />
       ) : (
         <>
-          <CardHeading size="sector">{DEALER_FORM.title}</CardHeading>
+          <CardHeading size="form">{DEALER_FORM.title}</CardHeading>
           <p className="-mt-1.5 font-body text-[14.5px] text-stone-grey">{DEALER_FORM.hint}</p>
           <div className="mt-[18px] grid gap-3.5">
             <InputField

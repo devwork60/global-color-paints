@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { PRODUCT_HELP_TILE } from "@/constant/landingPage/productRangeData";
-import CardDesc from "@/components/typography/CardDesc";
 import CardHeading from "@/components/typography/CardHeading";
 import ArrowCircle from "@/components/ui/ArrowCircle";
 
@@ -13,13 +12,9 @@ const HelpTile = () => (
     <CardHeading size="cta" className="max-w-[18ch]">
       {PRODUCT_HELP_TILE.title}
     </CardHeading>
-    <CardDesc
-      size="md"
-      tone="onDarkStrong"
-      className="max-w-[46ch] max-md:col-span-full max-md:row-start-2"
-    >
+    <p className="max-w-[46ch] font-body text-[15.5px] leading-[1.65] opacity-[.88] max-md:col-span-full max-md:row-start-2">
       {PRODUCT_HELP_TILE.description}
-    </CardDesc>
+    </p>
     <ArrowCircle color="var(--hs)" className="group-hover/help:-rotate-45" />
   </Link>
 );

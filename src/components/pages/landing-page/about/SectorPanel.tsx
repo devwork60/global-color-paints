@@ -17,7 +17,7 @@ const SectorPanel = ({ sector }: { sector: Sector }) => (
         {sector.title}
       </CardHeading>
       <p className="mt-3 font-body text-[15.5px] text-body-2">{sector.description}</p>
-      <div className="mt-5 inline-flex items-baseline gap-2 font-body text-sm text-stone-grey">
+      <div className="mt-5 inline-flex items-baseline gap-2 font-body text-sm leading-[1.65] text-stone-grey">
         <b className="font-display text-[44px] leading-none font-semibold tracking-[-0.04em] text-(--c)">
           {sector.projects.length}
         </b>

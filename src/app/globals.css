@@ -136,7 +136,7 @@
   --text-body: 1.0625rem;
   --text-body--line-height: 1.65;
   --text-card-desc: 0.9375rem;
-  --text-card-desc--line-height: 1.55;
+  --text-card-desc--line-height: 1.65;
   --text-eyebrow: 0.96875rem;
   --text-eyebrow--line-height: 1.3;
   --text-caption: 0.71875rem;
@@ -168,7 +168,6 @@
   --animate-fade-up-slow: fade-up 0.8s var(--ease-brand) backwards;
   --animate-marquee: marquee 40s linear infinite;
   --animate-progress: progress 5s linear forwards;
-  --animate-marquee-slow: marquee 44s linear infinite;
   --animate-row-in: row-in 0.55s var(--ease-brand) both;
 
   @keyframes row-in {
@@ -231,6 +230,17 @@
       opacity: 0;
       transform: translateY(22px);
     }
+  }
+}
+
+/* Visitors who prefer reduced motion get no animations or transitions at all (as in the source design). */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
   }
 }
 

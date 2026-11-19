@@ -18,7 +18,7 @@ export const fieldBorder = (error?: string) =>
 const FieldShell = ({ id, label, required, error, children }: FieldShellProps) => (
   <div className="grid content-start gap-1.5">
     {label && (
-      <label htmlFor={id} className="font-body text-[13.5px] leading-tight font-semibold">
+      <label htmlFor={id} className="font-body text-[13.5px] leading-[1.2] font-semibold">
         {label}
         {required && <em className="text-hs not-italic"> *</em>}
       </label>

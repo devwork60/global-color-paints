@@ -11,22 +11,32 @@ export interface FeaturedProject {
   place: string;
   image: string;
   imageAlt: string;
+  /** CSS object-position, for photos that need a different crop than the centre. */
+  imagePosition?: string;
 }
 
 export const FEATURED_PROJECTS: FeaturedProject[] = [
   {
-    id: "premier-choice",
-    name: "Premier Choice",
-    place: "Commercial development",
-    image: "/assets/images/projects/premier-choice.jpg",
-    imageAlt: "The glass-fronted Premier Choice commercial building",
+    id: "amazon-mall",
+    name: "Amazon Mall",
+    place: "A project of Imarat Builders",
+    image: "/assets/images/projects/amazon-mall.jpg",
+    imageAlt:
+      "Amazon Factory Outlet Mall, a white building with tall sail-shaped fins, seen from above at dusk",
   },
   {
-    id: "aaa-business-center",
-    name: "AAA Business Center",
+    id: "galaxy-riveria",
+    name: "Galaxy Riveria",
+    place: "Commercial plaza",
+    image: "/assets/images/projects/galaxy-riveria.jpg",
+    imageAlt: "The sandstone facade of the Galaxy Riveria plaza under a clear blue sky",
+  },
+  {
+    id: "68-high-street",
+    name: "68 High Street",
     place: "Bahria Town",
-    image: "/assets/images/projects/aaa-business-center.jpg",
-    imageAlt: "AAA Business Center seen from above in Bahria Town",
+    image: "/assets/images/projects/68-high-street.jpg",
+    imageAlt: "The 68 High Street commercial building beside a main road in Bahria Town",
   },
   {
     id: "islamabad-airport",
@@ -43,17 +53,19 @@ export const FEATURED_PROJECTS: FeaturedProject[] = [
     imageAlt: "A mosque with green-capped minarets at Askari 14",
   },
   {
-    id: "galaxy-riveria",
-    name: "Galaxy Riveria",
-    place: "Commercial plaza",
-    image: "/assets/images/projects/galaxy-riveria.jpg",
-    imageAlt: "The Galaxy Riveria commercial plaza at dusk",
-  },
-  {
     id: "river-hills",
     name: "River Hills",
     place: "Bahria Town",
     image: "/assets/images/projects/river-hills.jpg",
     imageAlt: "The River Hills apartment building in Bahria Town",
+  },
+  {
+    id: "galaxy-heights",
+    name: "Galaxy Heights",
+    place: "Commercial & Retail",
+    image: "/assets/images/projects/galaxy-heights.jpg",
+    imageAlt:
+      "Galaxy Heights, a white six-storey building with arched shopfronts, lit at dusk",
+    imagePosition: "30% 50%",
   },
 ];

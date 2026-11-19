@@ -3,7 +3,6 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import type { ProductPhotoTile } from "@/constant/landingPage/productRangeData";
 import CardHeading from "@/components/typography/CardHeading";
-import SmallText from "@/components/typography/SmallText";
 import Badge from "@/components/ui/Badge";
 
 /** Large photo tile (spans two columns) with a title, a one-line use and an optional tag. */
@@ -24,11 +23,15 @@ const PhotoTile = ({ tile }: { tile: ProductPhotoTile }) => (
       className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0)_35%,rgba(20,16,14,.78))]"
     />
     <div className="relative flex h-full flex-col justify-end gap-2.5 p-[22px]">
-      {tile.tag && <Badge className="mb-auto self-start">{tile.tag}</Badge>}
+      {tile.tag && (
+        <Badge variant="tag" className="mb-auto self-start">
+          {tile.tag}
+        </Badge>
+      )}
       <CardHeading size="feature">{tile.title}</CardHeading>
-      <SmallText variant="note" tone="onDark">
+      <small className="font-body text-[13px] leading-[1.4] font-medium text-white/75">
         {tile.description}
-      </SmallText>
+      </small>
     </div>
     <ArrowUpRight
       aria-hidden="true"

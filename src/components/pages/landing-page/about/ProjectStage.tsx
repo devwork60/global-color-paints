@@ -28,6 +28,7 @@ const ProjectStage = ({ projects, current, previous, progressKey, running }: Pro
             alt={project.imageAlt}
             fill
             sizes="(min-width: 960px) 60vw, 100vw"
+            style={project.imagePosition ? { objectPosition: project.imagePosition } : undefined}
             className={clsx(
               "object-cover transition-transform duration-[1600ms] ease-brand",
               state === "on" ? "scale-100" : "scale-[1.14]"

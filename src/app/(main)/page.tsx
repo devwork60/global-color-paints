@@ -1,6 +1,7 @@
 import AboutSection from "@/components/pages/landing-page/about/AboutSection";
 import AudienceSection from "@/components/pages/landing-page/audience/AudienceSection";
 import BrandsSection from "@/components/pages/landing-page/brands/BrandsSection";
+import ClientsSection from "@/components/pages/landing-page/clients/ClientsSection";
 import ColourSection from "@/components/pages/landing-page/colour/ColourSection";
 import DealerSection from "@/components/pages/landing-page/dealer/DealerSection";
 import Hero from "@/components/pages/landing-page/hero/Hero";
@@ -19,6 +20,7 @@ export default function Home() {
       <ColourSection />
       <WhySection />
       <AboutSection />
+      <ClientsSection />
       <DealerSection />
     </main>
   );

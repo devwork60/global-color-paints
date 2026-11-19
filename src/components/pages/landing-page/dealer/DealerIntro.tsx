@@ -10,7 +10,7 @@ const DealerIntro = () => (
     <MainHeading size="banner" className="my-[18px]">
       {DEALER_INTRO.title}
     </MainHeading>
-    <Paragraph size="lead" tone="onDarkMuted" className="max-w-[44ch]">
+    <Paragraph size="body" tone="inherit" className="max-w-[44ch] text-white/75">
       {DEALER_INTRO.lead}
     </Paragraph>
     <ol className="m-0 mt-[34px] grid list-none p-0">
@@ -24,7 +24,7 @@ const DealerIntro = () => (
           </span>
           <div>
             <b className="block font-body text-lg leading-[1.3] font-semibold">{step.title}</b>
-            <small className="font-body text-sm text-white/60">{step.note}</small>
+            <small className="font-body text-sm leading-[1.65] text-white/60">{step.note}</small>
           </div>
         </li>
       ))}

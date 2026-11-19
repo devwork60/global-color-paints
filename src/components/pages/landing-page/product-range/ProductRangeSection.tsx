@@ -31,6 +31,9 @@ const ProductRangeSection = () => (
         <HelpTile />
       </div>
     </Reveal>
+    <p className="mt-3.5 font-body text-[13.5px] leading-[1.65] text-stone-grey">
+      {PRODUCT_RANGE_HEAD.note}
+    </p>
   </Section>
 );
 

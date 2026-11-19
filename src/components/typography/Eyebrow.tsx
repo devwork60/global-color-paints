@@ -28,7 +28,7 @@ const Eyebrow: React.FC<EyebrowProps> = ({
 }) => (
   <p
     className={clsx(
-      "relative inline-block w-max max-w-full pb-2.5 font-body leading-[1.3] font-semibold",
+      "relative inline-block w-max max-w-full pb-2.5 font-body leading-[1.3] font-semibold tracking-[.005em]",
       "after:absolute after:-right-1.5 after:-left-0.5 after:bottom-0 after:h-2 after:content-['']",
       "after:mask-[url(/assets/icons/brush-stroke.svg)] after:mask-size-[100%_100%] after:mask-center after:mask-no-repeat",
       tones[tone],

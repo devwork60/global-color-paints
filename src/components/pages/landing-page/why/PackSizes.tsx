@@ -1,7 +1,6 @@
 import { PACKS_HEAD, PACK_SIZES } from "@/constant/landingPage/whyData";
 import PaintCan from "@/components/icons/PaintCan";
 import CardHeading from "@/components/typography/CardHeading";
-import SmallText from "@/components/typography/SmallText";
 import Reveal from "@/components/ui/Reveal";
 
 /** Card comparing the three pack sizes with can illustrations on a shared baseline. */
@@ -9,7 +8,9 @@ const PackSizes = () => (
   <Reveal className="col-span-7 flex flex-col rounded-3xl border border-line bg-white p-[clamp(22px,3vw,36px)] max-lg:col-span-12">
     <div className="flex flex-wrap items-baseline justify-between gap-4">
       <CardHeading size="lg">{PACKS_HEAD.title}</CardHeading>
-      <SmallText variant="note">{PACKS_HEAD.subtitle}</SmallText>
+      <span className="font-body text-[13px] leading-[1.3] font-medium text-stone-grey">
+        {PACKS_HEAD.subtitle}
+      </span>
     </div>
     <div
       aria-hidden="true"
@@ -30,7 +31,9 @@ const PackSizes = () => (
           <b className="block font-display text-[17px] leading-[1.2] font-bold">
             {pack.label}
           </b>
-          <SmallText variant="note">{pack.caption}</SmallText>
+          <span className="font-body text-[13px] leading-[1.4] font-medium text-stone-grey">
+            {pack.caption}
+          </span>
         </div>
       ))}
     </div>

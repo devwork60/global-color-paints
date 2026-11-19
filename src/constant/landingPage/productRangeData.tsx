@@ -14,7 +14,9 @@ export const PRODUCT_RANGE_HEAD = {
   eyebrow: "Product range",
   title: "Every coat, from first layer to final finish.",
   description:
-    "Ten product categories for interiors, exteriors, wood and metal. Choose a category to see which brand makes it.",};
+    "Ten product categories for interiors, exteriors, wood and metal. Choose a category to see which brand makes it.",
+  note: "Which brand makes each product will be confirmed with the client.",
+};
 
 export interface ProductPhotoTile {
   id: string;

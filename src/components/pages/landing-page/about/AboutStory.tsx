@@ -1,7 +1,6 @@
 import { BRANDS } from "@/constant/brands";
 import { ABOUT_STORY, MISSION_VISION } from "@/constant/landingPage/aboutData";
 import Paragraph from "@/components/typography/Paragraph";
-import SmallText from "@/components/typography/SmallText";
 import Reveal from "@/components/ui/Reveal";
 
 /** Rotating "Since 1992" badge: text runs around a circle, a rainbow ring spins around the year. */
@@ -52,9 +51,7 @@ const AboutStory = () => (
         );
       })}
       <div>
-        <SmallText variant="note" tone="onDarkMuted">
-          {ABOUT_STORY.familyLabel}
-        </SmallText>
+        <span className="font-body text-sm leading-[1.65] text-white/[.62]">{ABOUT_STORY.familyLabel}</span>
         <ul className="m-0 mt-3 flex list-none flex-wrap gap-2 p-0">
           {BRANDS.map((brand) => (
             <li

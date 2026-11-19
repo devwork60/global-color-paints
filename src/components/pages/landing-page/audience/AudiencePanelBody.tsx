@@ -1,6 +1,5 @@
 import clsx from "clsx";
 import Button from "@/components/button/Button";
-import CardDesc from "@/components/typography/CardDesc";
 import CardHeading from "@/components/typography/CardHeading";
 import Eyebrow from "@/components/typography/Eyebrow";
 import { AUDIENCE_HEAD, type AudienceData } from "@/constant/landingPage/audienceData";
@@ -42,10 +41,10 @@ const AudiencePanelBody = ({ audience, isOpen }: AudiencePanelBodyProps) => (
       <Button href={audience.cta.href} variant="light">
         {audience.cta.label}
       </Button>
-      <CardDesc size="xs" tone="onDark">
+      <p className="font-body text-[13.5px] leading-normal font-medium text-white/70">
         <b className="mr-0.5 font-bold text-bw-2">{AUDIENCE_HEAD.pathLabel}</b>{" "}
         {audience.path}
-      </CardDesc>
+      </p>
     </div>
   </div>
 );

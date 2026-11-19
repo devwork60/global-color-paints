@@ -20,7 +20,7 @@ const ProjectList = ({ projects, current, onSelect, onHover }: ProjectListProps)
           onClick={() => onSelect(i)}
           onFocus={() => onSelect(i)}
           onMouseEnter={() => onHover(i)}
-          className="group/row relative flex w-full flex-1 cursor-pointer items-center gap-4 border-0 bg-transparent px-1.5 py-4 text-left text-charcoal before:absolute before:-top-px before:left-0 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-hs before:transition-transform before:duration-[600ms] before:ease-brand before:content-[''] aria-pressed:before:scale-x-100"
+          className="group/row relative flex w-full flex-1 cursor-pointer items-center gap-4 leading-normal border-0 bg-transparent px-1.5 py-4 text-left text-charcoal before:absolute before:-top-px before:left-0 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-hs before:transition-transform before:duration-[600ms] before:ease-brand before:content-[''] aria-pressed:before:scale-x-100"
         >
           <span className="font-body text-[13px] leading-none font-semibold text-stone-grey transition-colors duration-300 group-aria-pressed/row:text-hs">
             {String(i + 1).padStart(2, "0")}

@@ -3,7 +3,7 @@ import clsx from "clsx";
 interface TextProps {
   children: React.ReactNode;
   /** xs 13.5px, sm 15px (default), md 16px, lg 19px semibold (taglines). */
-  size?: "xs" | "sm" | "md" | "lg";
+  size?: "xs" | "sm" | "md" | "lg" | "tag";
   tone?: "default" | "muted" | "onDark" | "onDarkStrong";
   className?: string;
 }
@@ -13,6 +13,7 @@ const sizes = {
   sm: "text-card-desc",
   md: "text-base leading-[1.65]",
   lg: "text-[19px] leading-[1.3] font-semibold",
+  tag: "text-base leading-[1.3] font-semibold",
 };
 
 const tones = {

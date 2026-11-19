@@ -7,7 +7,7 @@ import SubHeading from "@/components/typography/SubHeading";
 /** Footer call-to-action: headline, dealer button and social links. */
 const FooterCta = () => (
   <div>
-    <SubHeading className="max-w-[14ch] text-white">
+    <SubHeading size="footer" className="max-w-[14ch] text-white">
       Have a project or a shop? Let&apos;s talk.
     </SubHeading>
     <Button href="#dealer" variant="gold" icon={<ArrowRight />} className="mt-[22px]">

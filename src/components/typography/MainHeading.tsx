@@ -3,7 +3,7 @@ import clsx from "clsx";
 interface HeadingProps {
   children: React.ReactNode;
   /** "md" is a slightly smaller title; "display" the larger one for feature sections. */
-  size?: "md" | "section" | "display" | "banner" | "title";
+  size?: "md" | "section" | "display" | "banner" | "split" | "title";
   className?: string;
 }
 
@@ -11,6 +11,7 @@ const sizes = {
   md: "text-heading-md",
   section: "text-heading",
   display: "text-display",
+  split: "text-[clamp(36px,4.6vw,64px)] leading-none tracking-[-0.025em]",
   banner: "text-[clamp(36px,4.8vw,66px)] leading-[1.02] tracking-[-0.025em]",
   title: "text-title",
 };

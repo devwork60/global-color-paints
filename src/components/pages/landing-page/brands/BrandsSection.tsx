@@ -1,11 +1,15 @@
-import { BRANDS_HEAD, BRAND_PANELS } from "@/constant/landingPage/brandsSectionData";
+import {
+  BRANDS_HEAD,
+  BRAND_MINI_PANELS,
+  BRAND_PANELS,
+} from "@/constant/landingPage/brandsSectionData";
 import Section from "@/components/layout/Section";
 import SectionHead from "@/components/layout/SectionHead";
 import Reveal from "@/components/ui/Reveal";
-import BrandFamily from "./BrandFamily";
+import BrandMiniPanel from "./BrandMiniPanel";
 import BrandPanel from "./BrandPanel";
 
-/** HOME-02: flagship brand panel(s) followed by the family brand tiles. */
+/** HOME-02: the flagship photo panel, then a row of four sister-brand panels. */
 const BrandsSection = () => (
   <Section id="brands">
     <Reveal>
@@ -22,7 +26,13 @@ const BrandsSection = () => (
         ))}
       </div>
     </Reveal>
-    <BrandFamily />
+    <Reveal className="mt-4">
+      <div className="group/row flex h-[340px] gap-4 max-md:h-auto max-md:flex-col">
+        {BRAND_MINI_PANELS.map((panel) => (
+          <BrandMiniPanel key={panel.id} panel={panel} />
+        ))}
+      </div>
+    </Reveal>
   </Section>
 );
 

@@ -9,7 +9,7 @@ const DealerSuccess = ({ onReset }: { onReset: () => void }) => (
     <span className="grid size-16 place-items-center rounded-full bg-bw-tint text-bw">
       <Check aria-hidden="true" className="size-[30px]" />
     </span>
-    <CardHeading size="sector">{DEALER_FORM.successTitle}</CardHeading>
+    <CardHeading size="form">{DEALER_FORM.successTitle}</CardHeading>
     <p className="max-w-[30ch] font-body text-[15px] text-stone-grey">{DEALER_FORM.successText}</p>
     <Button variant="ghost" onClick={onReset}>
       {DEALER_FORM.again}

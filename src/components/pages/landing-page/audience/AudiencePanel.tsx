@@ -53,7 +53,7 @@ const AudiencePanel = ({
       onClick={onSelect}
       className="group/tab absolute inset-0 flex w-full cursor-pointer flex-col justify-end gap-1.5 border-0 bg-transparent p-6 text-left font-body text-inherit group-data-[open=true]/ap:relative group-data-[open=true]/ap:inset-auto group-data-[open=true]/ap:flex-none group-data-[open=true]/ap:cursor-default group-data-[open=true]/ap:justify-start group-data-[open=true]/ap:px-8 group-data-[open=true]/ap:pt-7 group-data-[open=true]/ap:pb-0 max-md:px-5 max-md:py-[18px] max-md:group-data-[open=true]/ap:pt-[22px]"
     >
-      <span className="absolute top-[22px] left-6 font-body text-[13px] leading-none font-medium text-white/85 group-data-[open=true]/ap:static group-data-[open=true]/ap:mb-3.5 max-md:top-[18px] max-md:right-5 max-md:left-auto">
+      <span className="absolute top-[22px] left-6 font-body text-[13px] leading-none font-semibold text-white/85 group-data-[open=true]/ap:static group-data-[open=true]/ap:mb-3.5 max-md:top-[18px] max-md:right-5 max-md:left-auto">
         {String(index + 1).padStart(2, "0")}
       </span>
       <span className="font-display text-tab font-semibold decoration-2 underline-offset-[5px] group-hover/tab:group-data-[open=false]/ap:underline">

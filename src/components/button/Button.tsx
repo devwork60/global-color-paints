@@ -58,7 +58,7 @@ const isExternal = (href: string) => /^(https?:|tel:|mailto:)/.test(href);
 const Button = (props: ButtonProps) => {
   const { variant = "dark", size = "md", icon, className, children } = props;
   const classes = clsx(
-    "group inline-flex cursor-pointer items-center gap-2.5 rounded-full border-[1.5px] font-body leading-none font-semibold no-underline",
+    "group inline-flex cursor-pointer items-center gap-2.5 rounded-full border-[1.5px] font-body leading-none font-semibold whitespace-nowrap no-underline",
     "transition duration-200 hover:-translate-y-0.5",
     variants[variant],
     sizes[size],

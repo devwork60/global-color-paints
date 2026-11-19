@@ -1,7 +1,6 @@
 "use client";
 
 import { HERO_COLOURS } from "@/constant/heroData";
-import SmallText from "@/components/typography/SmallText";
 import { useHeroWall } from "./HeroWall";
 
 /** "Tap a colour to paint the walls" picker: label plus one dot per colour. */
@@ -10,13 +9,11 @@ const HeroSwatches = () => {
 
   return (
     <div role="group" aria-labelledby="hero-try-label" className="mt-11 flex flex-col items-center gap-3.5 max-sm:mt-[30px]">
-      <p id="hero-try-label">
-        <SmallText variant="note" tone="onDark">
-          Tap a colour to paint the walls. Now showing{" "}
-          <b aria-live="polite" className="font-bold text-white">
-            {failed ? "preview unavailable" : HERO_COLOURS[selected].name}
-          </b>
-        </SmallText>
+      <p id="hero-try-label" className="font-body text-[13px] leading-[1.3] font-medium tracking-[.01em] text-white/80">
+        Tap a colour to paint the walls. Now showing{" "}
+        <b aria-live="polite" className="font-bold text-white">
+          {failed ? "preview unavailable" : HERO_COLOURS[selected].name}
+        </b>
       </p>
       <div className="flex flex-wrap justify-center gap-3 max-sm:max-w-[260px] max-sm:gap-2.5">
         {HERO_COLOURS.map((colour, i) => (

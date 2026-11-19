@@ -6,11 +6,10 @@ import AboutIntro from "./AboutIntro";
 import AboutProjects from "./AboutProjects";
 import AboutStats from "./AboutStats";
 import AboutStory from "./AboutStory";
-import AboutTrust from "./AboutTrust";
 import SectorLedger from "./SectorLedger";
 
 /** HOME-03: the company story: intro, stats, story, advantages, featured projects, sector
-    portfolio, trusted-by strip and the closing call to action. */
+    portfolio and the closing call to action. The clients strip is its own section. */
 const AboutSection = () => (
   <section
     id="about"
@@ -24,9 +23,6 @@ const AboutSection = () => (
       <AboutProjects />
       <Reveal className="mt-[clamp(64px,8vw,108px)]">
         <SectorLedger />
-      </Reveal>
-      <Reveal>
-        <AboutTrust />
       </Reveal>
       <Reveal>
         <AboutCta />

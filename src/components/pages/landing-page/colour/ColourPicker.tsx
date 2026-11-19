@@ -53,11 +53,11 @@ const ColourPicker = ({
               type="button"
               style={{ backgroundColor: shade.hex }}
               title={`${shade.name} ${shade.code}`}
-              aria-label={`${shade.name}, code ${shade.code}`}
+              aria-label={`${shade.name}, code ${shade.code}, ${shade.family}`}
               aria-pressed={selected === i}
               onClick={() => onShade(i)}
               className={clsx(
-                "relative aspect-[3/4] cursor-pointer rounded-md border-0 p-0 transition duration-[250ms] ease-brand hover:-translate-y-1 aria-pressed:-translate-y-1 aria-pressed:outline-2 aria-pressed:outline-offset-[3px] aria-pressed:outline-white",
+                "relative aspect-[3/4] cursor-pointer rounded-md border-0 p-0 max-sm:nth-[n+41]:hidden max-sm:nth-[n+41]:hidden transition duration-[250ms] ease-brand hover:-translate-y-1 aria-pressed:-translate-y-1 aria-pressed:outline-2 aria-pressed:outline-offset-[3px] aria-pressed:outline-white",
                 dimmed && "opacity-[.18]"
               )}
             />
@@ -90,11 +90,7 @@ const ColourPicker = ({
       >
         {COLOUR_HEAD.cta.label}
       </Button>
-      <p>
-        <SmallText variant="note" tone="onDarkFaint">
-          {COLOUR_HEAD.note}
-        </SmallText>
-      </p>
+      <p className="font-body text-[13px] leading-normal font-medium text-white/45">{COLOUR_HEAD.note}</p>
     </div>
   );
 };

@@ -1,8 +1,8 @@
 export const BRANDS_HEAD = {
   eyebrow: "Our Brands",
-  title: "A family of brands. One standard of paint.",
+  title: "Five brands. One standard of paint.",
   description:
-    "Every brand in the Global Colors family has its own range and its own look. Start with our flagship, HomeStyle, or browse the full family.",
+    "Each brand has its own range and its own look. Hover a brand to step inside, then open it to see products, colours and pack sizes.",
 };
 
 export interface BrandPanelData {
@@ -20,7 +20,7 @@ export interface BrandPanelData {
   imageAlt: string;
 }
 
-/** Add another entry and it will share the row (the panels flex to fit). */
+/** The flagship photo panel. */
 export const BRAND_PANELS: BrandPanelData[] = [
   {
     id: "homestyle",
@@ -28,7 +28,7 @@ export const BRAND_PANELS: BrandPanelData[] = [
     name: "HomeStyle Paints",
     tagline: "“We Make the Difference”",
     description:
-      "Our flagship paint brand, made for people who want color that looks beautiful and performs. High quality and excellent coverage give every wall a smooth, rich and consistent result, from family homes to landmark buildings.",
+      "Our flagship brand, made for people who want colour that looks beautiful and performs. Eurolux Special Emulsion comes in 54 colours.",
     categories: ["Emulsions", "Colours", "Quarter to bucket"],
     cta: "View HomeStyle",
     href: "#brands",
@@ -38,13 +38,26 @@ export const BRAND_PANELS: BrandPanelData[] = [
   },
 ];
 
-export const FAMILY_HEAD = {
-  title: "From the Global Colors family",
-  subtitle: "Sister brands, made to the same standard",
-  linkLabel: "View All Brands",
-  tileNote: "Global Colors family brand",
-  allTile: {
-    title: "View All Brands",
-    description: "Explore the complete brand family",
-  },
-};
+export interface BrandMiniPanelData {
+  id: string;
+  badge: string;
+  name: string;
+  tagline: string;
+  cta: string;
+  href: string;
+  color: string;
+}
+
+/** The four sister brands. Their range and tagline are still to be supplied by the client. */
+export const BRAND_MINI_PANELS: BrandMiniPanelData[] = [
+  { id: "bestwall", name: "BestWall", color: "var(--b-bestwall)" },
+  { id: "tylac", name: "Tylac", color: "var(--b-tylac)" },
+  { id: "expresso", name: "Expresso", color: "var(--b-expresso)" },
+  { id: "ibex", name: "IBEX", color: "var(--b-ibex)" },
+].map((brand) => ({
+  ...brand,
+  badge: "Range to be confirmed",
+  tagline: "Brand line",
+  cta: `View ${brand.name}`,
+  href: "#brands",
+}));

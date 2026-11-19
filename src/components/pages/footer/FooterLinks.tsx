@@ -19,17 +19,10 @@ export const FooterBrandsAndCompany = () => (
     <FooterColumn title="Our Brands">
       {BRANDS.map((brand) => (
         <li key={brand.id}>
-          {brand.kind === "flag" ? (
-            <Link href="#brands" className={`${brandRow} ${footerLinkClass}`}>
-              <BrandDot color={brand.color} />
-              {brand.name}
-            </Link>
-          ) : (
-            <span className={brandRow}>
-              <BrandDot color={brand.color} />
-              {brand.name}
-            </span>
-          )}
+          <Link href="#brands" className={`${brandRow} ${footerLinkClass}`}>
+            <BrandDot color={brand.color} />
+            {brand.name}
+          </Link>
         </li>
       ))}
     </FooterColumn>
