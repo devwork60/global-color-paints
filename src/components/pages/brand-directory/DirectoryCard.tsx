@@ -72,7 +72,7 @@ export const DirectoryAskCard = ({
   onSelect: () => void;
 }) => (
   <Link
-    href="#contact"
+    href="#dealer"
     onClick={onSelect}
     style={{ animationDelay: `${index * 60}ms` }}
     className={clsx(

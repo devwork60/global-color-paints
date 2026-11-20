@@ -7,6 +7,7 @@ export const CLIENTS_HEAD = {
   meta: [
     { value: "22+", label: "Landmark projects" },
     { value: "30+", label: "Years of experience" },
+    { value: "5+", label: "Paint brands" },
   ],
 };
 

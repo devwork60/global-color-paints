@@ -73,5 +73,5 @@ export const PRODUCT_HELP_TILE = {
   title: "Not sure which product you need?",
   description:
     "Tell us the surface and the job. Our team will suggest the right product and pack size.",
-  href: "#contact",
+  href: "#dealer",
 };

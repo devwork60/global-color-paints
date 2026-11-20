@@ -5,12 +5,9 @@ import FooterCta from "./FooterCta";
 import { FooterBrandsAndCompany, FooterProducts } from "./FooterLinks";
 import FooterWordmark from "./FooterWordmark";
 
-/** Site footer. Its id (#contact) is the target of every "Contact Us" link. */
+/** Site footer. */
 const Footer = () => (
-  <footer
-    id="contact"
-    className="mt-section overflow-hidden bg-charcoal text-white/[.78]"
-  >
+  <footer className="mt-section overflow-hidden bg-charcoal text-white/[.78]">
     <Container>
       <div className="grid grid-cols-[1.5fr_1fr_1fr_1.5fr] gap-10 pt-20 pb-10 max-lg:grid-cols-2 max-sm:grid-cols-1 max-sm:gap-8 max-sm:pt-14 max-sm:pb-6">
         <FooterCta />

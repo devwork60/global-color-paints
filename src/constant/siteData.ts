@@ -16,13 +16,12 @@ export interface NavLink {
 export const NAV_LINKS: { home: NavLink; about: NavLink; contact: NavLink } = {
   home: { label: "Home", href: "#top" },
   about: { label: "About Us", href: "#about" },
-  contact: { label: "Contact Us", href: "#contact" },
+  contact: { label: "Contact Us", href: "#dealer" },
 };
 
 export const COMPANY_LINKS: NavLink[] = [
   { label: "About Us", href: "#about" },
-  { label: "Contact Us", href: "#contact" },
-  { label: "Privacy Policy", href: "#contact" },
+  { label: "Contact Us", href: "#dealer" },
 ];
 
 export const PRODUCT_LINKS: NavLink[] = [
@@ -50,5 +49,5 @@ export const SOCIAL_LINKS: {
     href: "https://www.instagram.com/homestylepaints",
     icon: "instagram",
   },
-  { label: "YouTube", href: "#contact", icon: "youtube" },
+  { label: "YouTube", href: "#dealer", icon: "youtube" },
 ];

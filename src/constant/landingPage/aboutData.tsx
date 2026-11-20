@@ -27,10 +27,10 @@ export interface AboutStat {
 }
 
 export const ABOUT_STATS: AboutStat[] = [
-  { id: "established", to: 1992, from: 1962, label: "Year established", code: "GC 01", color: "var(--hs)", delay: 0 },
+  { id: "established", to: 1992, from: 1900, label: "Year established", code: "GC 01", color: "var(--hs)", delay: 0 },
   { id: "experience", to: 30, suffix: "+", label: "Years of experience", code: "GC 02", color: "var(--bw)", delay: 0.1 },
   { id: "projects", to: 22, suffix: "+", label: "Landmark projects", code: "GC 03", color: "var(--bw-2)", delay: 0.2, darkText: true },
-  { id: "brands", to: 5, label: "Paint brands", code: "GC 04", color: "var(--hs-2)", delay: 0.3 },
+  { id: "brands", to: 5, suffix: "+", label: "Paint brands", code: "GC 04", color: "var(--hs-2)", delay: 0.3 },
 ];
 
 export const ABOUT_STORY = {

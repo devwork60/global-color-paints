@@ -9,9 +9,10 @@ interface CountUpProps {
   duration?: number;
 }
 
-/** Counts from `from` to `to` the first time it is 60% visible. Renders `to` until then
-    (and always, with reduced motion), so the final number is in the HTML. */
-const CountUp = ({ to, from = 0, duration = 1700 }: CountUpProps) => {
+/** Counts from `from` up to `to` every time it scrolls into view (60% visible). Renders `to` until
+    then (and always, with reduced motion), so the final number is in the HTML. When it leaves the
+    screen it quietly resets to `from`, so the next visit runs the count again. */
+const CountUp = ({ to, from = 0, duration = 2000 }: CountUpProps) => {
   const ref = useRef<HTMLSpanElement>(null);
   const [value, setValue] = useState(to);
 
@@ -24,8 +25,11 @@ const CountUp = ({ to, from = 0, duration = 1700 }: CountUpProps) => {
     let frame = 0;
     const observer = new IntersectionObserver(
       (entries) => {
-        if (!entries.some((e) => e.isIntersecting)) return;
-        observer.disconnect();
+        cancelAnimationFrame(frame);
+        if (!entries.some((e) => e.isIntersecting)) {
+          setValue(from); // off screen: get ready for the next run
+          return;
+        }
         const start = performance.now();
         const step = (now: number) => {
           const progress = Math.min(1, (now - start) / duration);

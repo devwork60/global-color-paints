@@ -15,7 +15,7 @@ export const DEALER_FORM = {
   hint: "Fields marked * are required.",
   submit: "Send Enquiry",
   whatsappLabel: "Message us on WhatsApp",
-  whatsappHref: "#contact",
+  whatsappHref: "#dealer",
   successTitle: "Enquiry received",
   successText: "Thank you. Our team will call you on the number you gave us.",
   again: "Send another",

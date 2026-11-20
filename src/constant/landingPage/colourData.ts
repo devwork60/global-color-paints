@@ -16,7 +16,7 @@ export const COLOUR_HEAD = {
   description:
     "Tap a shade to try it in the room. When you find one you like, ask for the HomeStyle Eurolux Special Emulsion shade card and our team will help you choose.",
   productLine: "Eurolux Special Emulsion",
-  cta: { label: "Ask for Shade Card", href: "#contact" },
+  cta: { label: "Ask for Shade Card", href: "#dealer" },
   note: "Swatches are indicative only. Screen colours differ from paint on a wall.",
   previewLabel: "Indicative preview",
 };
