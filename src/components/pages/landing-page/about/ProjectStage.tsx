@@ -53,7 +53,7 @@ const ProjectStage = ({ projects, current, previous, progressKey, running }: Pro
       <i
         key={progressKey}
         className={clsx(
-          "block h-full origin-left scale-x-0 [background-image:var(--rain)]",
+          "block h-full origin-left [background-image:var(--rain)] [transform:scaleX(0)]",
           running && "animate-progress"
         )}
       />

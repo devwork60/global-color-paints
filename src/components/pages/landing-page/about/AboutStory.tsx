@@ -62,6 +62,9 @@ const AboutStory = () => (
               {brand.name}
             </li>
           ))}
+          <li className="inline-flex items-center rounded-full border border-line-d px-[15px] py-[9px] font-body text-[14.5px] font-semibold text-white/70">
+            {ABOUT_STORY.moreLabel}
+          </li>
         </ul>
       </div>
     </div>

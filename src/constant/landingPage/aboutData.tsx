@@ -37,6 +37,8 @@ export const ABOUT_STORY = {
   badgeText: "Global Colors Company · Since 1992 · We make the difference ·",
   since: { label: "Since", year: "1992" },
   familyLabel: "Five brands, one standard",
+  /** Closing pill after the last brand: there are 5+ brands and more to come. */
+  moreLabel: "+ more",
 };
 
 export interface MissionVision {
