@@ -1,5 +1,6 @@
 import nodemailer, { type Transporter } from "nodemailer";
 import { SITE } from "@/constant/siteData";
+import { readEnv } from "./env";
 import { MailError, type MailFailureKind, type MailReceipt, type OutgoingMail } from "./mailTypes";
 
 interface MailConfig {
@@ -16,11 +17,23 @@ interface MailConfig {
     The lead inbox and the "From" address default to the company address, never to the SMTP login
     (with many mail services the login is a system address, not a real mailbox). */
 function readConfig(): MailConfig {
-  const { SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, SMTP_FROM, LEAD_TO_EMAIL } = process.env;
+  const SMTP_HOST = readEnv("SMTP_HOST");
+  const SMTP_PORT = readEnv("SMTP_PORT");
+  const SMTP_USER = readEnv("SMTP_USER");
+  const SMTP_PASS = readEnv("SMTP_PASS");
+  const SMTP_FROM = readEnv("SMTP_FROM");
+  const LEAD_TO_EMAIL = readEnv("LEAD_TO_EMAIL");
 
-  const missing = (["SMTP_HOST", "SMTP_PORT", "SMTP_USER", "SMTP_PASS"] as const).filter(
-    (key) => !process.env[key]?.trim()
-  );
+  const missing = (
+    [
+      ["SMTP_HOST", SMTP_HOST],
+      ["SMTP_PORT", SMTP_PORT],
+      ["SMTP_USER", SMTP_USER],
+      ["SMTP_PASS", SMTP_PASS],
+    ] as const
+  )
+    .filter(([, value]) => !value)
+    .map(([name]) => name);
   if (missing.length > 0) throw new MailError(`Missing email settings: ${missing.join(", ")}`, "config");
 
   const port = Number(SMTP_PORT);
@@ -29,12 +42,12 @@ function readConfig(): MailConfig {
   }
 
   return {
-    host: SMTP_HOST!.trim(),
+    host: SMTP_HOST!,
     port,
-    user: SMTP_USER!.trim(),
-    pass: SMTP_PASS!.trim(),
-    from: SMTP_FROM?.trim() || `"Global Colors Website" <${SITE.email}>`,
-    to: LEAD_TO_EMAIL?.trim() || SITE.email,
+    user: SMTP_USER!,
+    pass: SMTP_PASS!,
+    from: SMTP_FROM || `"Global Colors Website" <${SITE.email}>`,
+    to: LEAD_TO_EMAIL || SITE.email,
   };
 }
 

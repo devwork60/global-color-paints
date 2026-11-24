@@ -1,4 +1,5 @@
 import { SITE } from "@/constant/siteData";
+import { readEnv } from "./env";
 import { MailError, type MailFailureKind, type MailReceipt, type OutgoingMail } from "./mailTypes";
 
 const DEFAULT_URL = "https://api.resend.com/emails";
@@ -6,7 +7,7 @@ const DEFAULT_URL = "https://api.resend.com/emails";
 const TEST_SENDER = '"Global Colors Website" <onboarding@resend.dev>';
 
 /** True when a Resend API key is set, which switches the site from SMTP to sending over HTTPS. */
-export const resendConfigured = () => Boolean(process.env.RESEND_API_KEY?.trim());
+export const resendConfigured = () => Boolean(readEnv("RESEND_API_KEY"));
 
 const kindForStatus = (status: number, name?: string): MailFailureKind => {
   if (status === 401) return "auth";
@@ -19,10 +20,10 @@ const kindForStatus = (status: number, name?: string): MailFailureKind => {
 /** Sends one email through the Resend HTTP API (port 443, so no mail-server ports and no IP allow-list
     are involved). Resolves only when Resend has accepted the message; otherwise throws a MailError. */
 export async function sendWithResend({ subject, html, text, replyTo }: OutgoingMail): Promise<MailReceipt> {
-  const key = process.env.RESEND_API_KEY!.trim();
-  const from = process.env.RESEND_FROM?.trim() || TEST_SENDER;
-  const to = process.env.LEAD_TO_EMAIL?.trim() || SITE.email;
-  const url = process.env.RESEND_API_URL?.trim() || DEFAULT_URL;
+  const key = readEnv("RESEND_API_KEY")!;
+  const from = readEnv("RESEND_FROM") || TEST_SENDER;
+  const to = readEnv("LEAD_TO_EMAIL") || SITE.email;
+  const url = readEnv("RESEND_API_URL") || DEFAULT_URL;
 
   let response: Response;
   try {
