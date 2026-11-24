@@ -19,11 +19,17 @@ export const DEALER_FORM = {
   successTitle: "Enquiry received",
   successText: "Thank you. Our team will call you on the number you gave us.",
   again: "Send another",
-  businessTypes: ["Dealer", "Distributor", "Retailer", "Contractor", "Project", "Corporate"],
+  businessTypes: ["Dealer", "Distributor", "Retailer", "Contractor", "Project", "Corporate"] as const,
+  /** Shown under the form if the email could not be sent, or when sending too often. */
+  sendFailed: "We could not send your enquiry just now. Please call us on 0327-5001444 or try again in a minute.",
+  tooMany: "You have sent a few enquiries already. Please wait a few minutes, or call us on 0327-5001444.",
 };
 
 export const DEALER_ERRORS = {
   name: "Enter your business name.",
   phone: "Enter a Pakistani number, like 0300 1234567.",
   city: "Enter your city.",
+  nameTooLong: "Business name is too long (120 characters at most).",
+  cityTooLong: "City name is too long (80 characters at most).",
+  type: "Choose a business type.",
 };

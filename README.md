@@ -11,6 +11,14 @@ npm run lint
 
 Set `NEXT_PUBLIC_SITE_URL` (for example `https://example.com`) so Open Graph image URLs are absolute.
 
+## Dealer enquiries by email
+
+The "Become a Dealer" form validates with Zod (`src/utils/dealerLeadSchema.ts`, shared by the browser and the server), then calls a Server Action (`src/app/actions/submitDealerLead.ts`) that checks the lead again and emails it through SMTP with Nodemailer. The email template is in `src/server/dealerLeadEmail.ts`.
+
+Copy `.env.example` to `.env.local` and fill in `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER` and `SMTP_PASS`. Optionally set `LEAD_TO_EMAIL` (the inbox that receives leads) and `SMTP_FROM` (the sender, which must be a verified sender at your provider); both default to the company address in `src/constant/siteData.ts`. Set the same variables in the hosting dashboard (for example Vercel > Project > Settings > Environment Variables), because `.env.local` is not deployed. Restart the dev server after changing them. Failures are logged on the server as `[dealer-lead] ... NOT sent kind=...` with no secrets in them.
+
+Spam protection: a hidden bot-trap field, plus at most 5 enquiries per visitor per 15 minutes (kept in memory, so it resets when the server restarts).
+
 ## Structure
 
 | Path | What lives there |
@@ -32,5 +40,4 @@ Set `NEXT_PUBLIC_SITE_URL` (for example `https://example.com`) so Open Graph ima
 
 ## Known gaps
 
-- The dealer form validates in the browser only. It needs a backend before enquiries reach the sales team.
 - The footer shows "to be supplied" tags for the office address, WhatsApp number and working hours. These come from the source design and need client content.
