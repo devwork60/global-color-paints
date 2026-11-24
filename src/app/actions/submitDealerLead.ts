@@ -56,7 +56,7 @@ export async function submitDealerLead(input: unknown): Promise<DealerLeadResult
     const email = buildDealerLeadEmail({ lead: checked.data, receivedAt: new Date(), source });
     const receipt = await sendMail(email);
     markSent(fingerprint);
-    console.info(`[dealer-lead] ref=${ref} sent, accepted by SMTP server messageId=${receipt.messageId}`);
+    console.info(`[dealer-lead] ref=${ref} sent, accepted by the mail provider messageId=${receipt.messageId}`);
     return { ok: true };
   } catch (error) {
     // The visitor sees a calm message and the phone number; the log says exactly what went wrong.
