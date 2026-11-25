@@ -44,11 +44,6 @@ export const DirectoryCard = ({ brand, index, onSelect }: DirectoryCardProps) =>
           {brand.directoryNote}
         </span>
       </span>
-      {brand.kind === "flag" && (
-        <em className={arrowRow}>
-          Explore HomeStyle <ArrowRight />
-        </em>
-      )}
     </>
   );
 

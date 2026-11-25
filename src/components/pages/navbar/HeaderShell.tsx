@@ -3,8 +3,9 @@
 import { useSyncExternalStore } from "react";
 
 /* Header state is derived from scroll position:
-   - surface "over": transparent, white text, while the hero (#vhero) is behind it
-   - surface "scrolled" / "top": solid canvas, with a border once scrolled
+   - surface "over": transparent, white text, only at the very top of the page with the hero behind it
+   - surface "scrolled" / "top": solid canvas, with a border once scrolled. The bar turns solid as soon as
+     scrolling starts, so it never sits see-through on top of the hero headline
    - data-scrolled: shrinks the bar and logo after 12px of scroll */
 type Snapshot = `${"over" | "scrolled" | "top"}|${0 | 1}`;
 
@@ -21,7 +22,7 @@ const getSnapshot = (): Snapshot => {
   const y = window.scrollY;
   const hero = document.getElementById("vhero");
   const scrolled = y > 12;
-  const over = !!hero && y < hero.offsetHeight - 90;
+  const over = !!hero && !scrolled && y < hero.offsetHeight - 90;
   return `${over ? "over" : scrolled ? "scrolled" : "top"}|${scrolled ? 1 : 0}`;
 };
 

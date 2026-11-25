@@ -1,5 +1,5 @@
 import { Clock, Mail, MapPin, MessageCircleMore, Phone } from "lucide-react";
-import { SITE } from "@/constant/siteData";
+import { SITE, whatsappUrl } from "@/constant/siteData";
 import PlaceholderTag from "@/components/ui/PlaceholderTag";
 import FooterColumn, { footerLinkClass } from "./FooterColumn";
 
@@ -18,19 +18,19 @@ const Item = ({
   </li>
 );
 
-/** "Get in touch" column. Entries marked to-be-supplied stay flagged, as in the source design. */
+/** "Get in touch" column. Working hours is still marked to-be-supplied, as in the source design. */
 const FooterContact = () => (
   <FooterColumn title="Get in touch">
-    <Item icon={<MapPin aria-hidden="true" />}>
-      Office and factory <PlaceholderTag />
-    </Item>
+    <Item icon={<MapPin aria-hidden="true" />}>{SITE.address}</Item>
     <Item icon={<Phone aria-hidden="true" />}>
       <a href={SITE.phoneHref} className={footerLinkClass}>
         {SITE.phone}
       </a>
     </Item>
     <Item icon={<MessageCircleMore aria-hidden="true" />}>
-      WhatsApp <PlaceholderTag />
+      <a href={whatsappUrl()} target="_blank" rel="noopener noreferrer" className={footerLinkClass}>
+        Chat on WhatsApp
+      </a>
     </Item>
     <Item icon={<Mail aria-hidden="true" />}>
       <a href={SITE.emailHref} className={`${footerLinkClass} [overflow-wrap:anywhere]`}>

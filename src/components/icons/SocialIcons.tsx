@@ -5,7 +5,7 @@ interface IconProps {
 }
 
 /* Brand icons were removed from lucide-react, so they live here as inline SVG
-   (paths taken from the Lucide set used by the original HTML). */
+   (Facebook and Instagram from the Lucide set used by the original HTML, WhatsApp from Tabler Icons, MIT). */
 const Svg = ({ className, children }: IconProps & { children: React.ReactNode }) => (
   <svg
     viewBox="0 0 24 24"
@@ -32,10 +32,10 @@ const icons: Record<SocialIconKey, React.ReactNode> = {
       <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
     </>
   ),
-  youtube: (
+  whatsapp: (
     <>
-      <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17" />
-      <path d="m10 15 5-3-5-3z" />
+      <path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21" />
+      <path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1" />
     </>
   ),
 };

@@ -40,4 +40,4 @@ Spam protection: a hidden bot-trap field, plus at most 5 enquiries per visitor p
 
 ## Known gaps
 
-- The footer shows "to be supplied" tags for the office address, WhatsApp number and working hours. These come from the source design and need client content.
+- The footer still shows a "to be supplied" tag for the working hours. This comes from the source design and needs client content.

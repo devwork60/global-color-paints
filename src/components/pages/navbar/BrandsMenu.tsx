@@ -11,7 +11,7 @@ const BrandsMenu = () => (
     <Link
       href="#brands"
       style={{ backgroundColor: FLAGSHIP_BRAND.color }}
-      className="group/flag relative flex flex-col justify-end gap-1.5 overflow-hidden rounded-[14px] p-5 text-white no-underline after:absolute after:-top-[30px] after:-right-[30px] after:size-[120px] after:rounded-full after:bg-white/[.12] after:transition-transform after:duration-[400ms] after:content-[''] hover:after:scale-[1.4]"
+      className="relative flex flex-col justify-end gap-1.5 overflow-hidden rounded-[14px] p-5 text-white no-underline after:absolute after:-top-[30px] after:-right-[30px] after:size-[120px] after:rounded-full after:bg-white/[.12] after:transition-transform after:duration-[400ms] after:content-[''] hover:after:scale-[1.4]"
     >
       <small className="mb-auto self-start rounded-full bg-white/20 px-2.5 py-[7px] font-body text-xs leading-none font-semibold">
         Flagship brand
@@ -20,13 +20,6 @@ const BrandsMenu = () => (
         {FLAGSHIP_BRAND.name}
       </span>
       <span className="text-[13.5px] opacity-90">We Make the Difference</span>
-      <em className="mt-3 flex items-center gap-1.5 font-body text-sm leading-none font-semibold not-italic">
-        Explore HomeStyle
-        <ArrowRight
-          aria-hidden="true"
-          className="size-4 transition-transform duration-300 group-hover/flag:translate-x-1"
-        />
-      </em>
     </Link>
     <div className="flex flex-col gap-0.5 px-1 py-0.5">
       <p className="px-2 pt-2 pb-1.5 font-body text-[12.5px] leading-tight font-semibold text-stone-grey">

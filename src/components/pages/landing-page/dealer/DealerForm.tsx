@@ -4,6 +4,7 @@ import { useState, useTransition, type FormEvent } from "react";
 import { LoaderCircle, MessageCircleMore, Send } from "lucide-react";
 import { submitDealerLead } from "@/app/actions/submitDealerLead";
 import { DEALER_FORM } from "@/constant/landingPage/dealerData";
+import { whatsappUrl } from "@/constant/siteData";
 import {
   validateDealerLead,
   type DealerLeadErrors,
@@ -159,7 +160,9 @@ const DealerForm = () => {
               or
             </span>
             <a
-              href={DEALER_FORM.whatsappHref}
+              href={whatsappUrl(DEALER_FORM.whatsappMessage)}
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 font-body text-[15px] font-bold text-wa no-underline [&>svg]:size-[18px]"
             >
               <MessageCircleMore aria-hidden="true" />

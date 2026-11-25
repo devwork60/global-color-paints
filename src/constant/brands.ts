@@ -26,7 +26,7 @@ export const BRANDS: Brand[] = [
     initials: "BW",
     color: "var(--b-bestwall)",
     kind: "family",
-    directoryNote: "Global Colors family",
+    directoryNote: "Better Walls. Better Living.",
   },
   {
     id: "tylac",
@@ -34,7 +34,7 @@ export const BRANDS: Brand[] = [
     initials: "TY",
     color: "var(--b-tylac)",
     kind: "family",
-    directoryNote: "Global Colors family",
+    directoryNote: "Built for Lasting Beauty.",
   },
   {
     id: "expresso",
@@ -42,7 +42,7 @@ export const BRANDS: Brand[] = [
     initials: "EX",
     color: "var(--b-expresso)",
     kind: "family",
-    directoryNote: "Global Colors family",
+    directoryNote: "Bring Colour to Life.",
   },
   {
     id: "ibex",
@@ -50,7 +50,7 @@ export const BRANDS: Brand[] = [
     initials: "IB",
     color: "var(--b-ibex)",
     kind: "family",
-    directoryNote: "Global Colors family",
+    directoryNote: "Strength in Every Coat.",
   },
 ];
 

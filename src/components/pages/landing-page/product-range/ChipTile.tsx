@@ -1,17 +1,16 @@
-import Link from "next/link";
 import type { ProductChip } from "@/constant/landingPage/productRangeData";
 import CardDesc from "@/components/typography/CardDesc";
 import CardHeading from "@/components/typography/CardHeading";
 
-/** Compact product tile styled like a paint chip: a small swatch that floods the card with its tint on hover. */
+/** Compact product tile styled like a paint chip: a small swatch that floods the card with its tint on hover.
+    It is not a link; the hover effect is purely decorative. */
 const ChipTile = ({ chip }: { chip: ProductChip }) => {
   const Icon = chip.icon;
   return (
-    <Link
-      href={chip.href}
+    <div
       style={{ "--tint": chip.tint } as React.CSSProperties}
       className={
-        "group/chip relative flex items-center gap-3.5 overflow-hidden rounded-[18px] border border-line bg-white py-2.5 pr-4 pl-2.5 no-underline transition duration-[350ms] ease-brand " +
+        "group/chip relative flex items-center gap-3.5 overflow-hidden rounded-[18px] border border-line bg-white py-2.5 pr-4 pl-2.5 transition duration-[350ms] ease-brand " +
         "hover:-translate-y-1 hover:border-transparent hover:shadow-[0_18px_36px_-26px_rgba(38,35,34,.35)] " +
         "before:absolute before:top-2.5 before:left-2.5 before:size-[52px] before:rounded-xl before:bg-canvas before:content-[''] " +
         "before:transition-[left,top,width,height,border-radius] before:duration-[550ms] before:ease-brand " +
@@ -35,7 +34,7 @@ const ChipTile = ({ chip }: { chip: ProductChip }) => {
           {chip.description}
         </CardDesc>
       </span>
-    </Link>
+    </div>
   );
 };
 

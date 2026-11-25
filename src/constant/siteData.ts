@@ -1,12 +1,20 @@
 export const SITE = {
   name: "Global Colors Company",
+  address: "Rawat Industrial Estate, Rawalpindi",
   phone: "0327-5001444",
   phoneHref: "tel:03275001444",
+  /** The same number in international format (no + or spaces), which is what wa.me links need. */
+  whatsappNumber: "923275001444",
+  whatsappHref: "https://wa.me/923275001444",
   email: "contact@globalcolorscompany.com",
   emailHref: "mailto:contact@globalcolorscompany.com",
   copyright:
     "© 2026 Global Colors Company, home of HomeStyle Paints, BestWall, Tylac, Expresso and IBEX. All rights reserved.",
 };
+
+/** A link that opens a WhatsApp chat with the sales number, optionally with a first message already typed. */
+export const whatsappUrl = (message?: string) =>
+  message ? `${SITE.whatsappHref}?text=${encodeURIComponent(message)}` : SITE.whatsappHref;
 
 export interface NavLink {
   label: string;
@@ -32,7 +40,7 @@ export const PRODUCT_LINKS: NavLink[] = [
   { label: "Wood and metal", href: "#range" },
 ];
 
-export type SocialIconKey = "facebook" | "instagram" | "youtube";
+export type SocialIconKey = "facebook" | "instagram" | "whatsapp";
 
 export const SOCIAL_LINKS: {
   label: string;
@@ -40,8 +48,8 @@ export const SOCIAL_LINKS: {
   icon: SocialIconKey;
 }[] = [
   {
-    label: "Facebook, @homestylepaints",
-    href: "https://www.facebook.com/homestylepaints",
+    label: "Facebook, Global Colors Company",
+    href: "https://www.facebook.com/share/1GejkE9eEs/?mibextid=wwXIfr",
     icon: "facebook",
   },
   {
@@ -49,5 +57,5 @@ export const SOCIAL_LINKS: {
     href: "https://www.instagram.com/homestylepaints",
     icon: "instagram",
   },
-  { label: "YouTube", href: "#dealer", icon: "youtube" },
+  { label: "WhatsApp, 0327-5001444", href: whatsappUrl(), icon: "whatsapp" },
 ];

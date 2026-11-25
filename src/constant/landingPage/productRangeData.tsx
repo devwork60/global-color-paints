@@ -55,23 +55,23 @@ export interface ProductChip {
   icon: LucideIcon;
   /** Colour that floods the tile on hover. */
   tint: string;
-  href: string;
 }
 
 export const PRODUCT_CHIPS: ProductChip[] = [
-  { id: "weather", title: "Weather-resistant", description: "For outside walls", icon: CloudSunRain, tint: "#FBEDE8", href: "#brands" },
-  { id: "primer", title: "Primer", description: "The first coat", icon: Layers, tint: "#FBF3E1", href: "#brands" },
-  { id: "enamel", title: "Enamel", description: "Glossy finish", icon: Droplet, tint: "#E6F1F1", href: "#brands" },
-  { id: "putty", title: "Putty", description: "Smooth walls", icon: BrickWall, tint: "#F5ECE3", href: "#brands" },
-  { id: "waterproofing", title: "Waterproofing", description: "Stops damp", icon: Umbrella, tint: "#E8EFF5", href: "#brands" },
-  { id: "texture", title: "Texture", description: "Feature walls", icon: Waves, tint: "#EEF2E6", href: "#brands" },
-  { id: "wood", title: "Wood coatings", description: "Doors and furniture", icon: TreeDeciduous, tint: "#F7EEE6", href: "#brands" },
-  { id: "metal", title: "Metal coatings", description: "Gates and grills", icon: Wrench, tint: "#EFEAF2", href: "#brands" },
+  { id: "weather", title: "Weather-resistant", description: "For outside walls", icon: CloudSunRain, tint: "#FBEDE8" },
+  { id: "primer", title: "Primer", description: "The first coat", icon: Layers, tint: "#FBF3E1" },
+  { id: "enamel", title: "Enamel", description: "Glossy finish", icon: Droplet, tint: "#E6F1F1" },
+  { id: "putty", title: "Putty", description: "Smooth walls", icon: BrickWall, tint: "#F5ECE3" },
+  { id: "waterproofing", title: "Waterproofing", description: "Stops damp", icon: Umbrella, tint: "#E8EFF5" },
+  { id: "texture", title: "Texture", description: "Feature walls", icon: Waves, tint: "#EEF2E6" },
+  { id: "wood", title: "Wood coatings", description: "Doors and furniture", icon: TreeDeciduous, tint: "#F7EEE6" },
+  { id: "metal", title: "Metal coatings", description: "Gates and grills", icon: Wrench, tint: "#EFEAF2" },
 ];
 
 export const PRODUCT_HELP_TILE = {
   title: "Not sure which product you need?",
   description:
     "Tell us the surface and the job. Our team will suggest the right product and pack size.",
-  href: "#dealer",
+  /** Pre-filled first message when the WhatsApp chat opens. */
+  whatsappMessage: "Hello Global Colors, I need help choosing the right product.",
 };

@@ -15,7 +15,8 @@ export const DEALER_FORM = {
   hint: "Fields marked * are required.",
   submit: "Send Enquiry",
   whatsappLabel: "Message us on WhatsApp",
-  whatsappHref: "#dealer",
+  /** Pre-filled first message when the WhatsApp chat opens. */
+  whatsappMessage: "Hello Global Colors, I would like to become a dealer.",
   successTitle: "Enquiry received",
   successText: "Thank you. Our team will call you on the number you gave us.",
   again: "Send another",
