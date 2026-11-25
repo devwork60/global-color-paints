@@ -1,6 +1,5 @@
 import { Clock, Mail, MapPin, MessageCircleMore, Phone } from "lucide-react";
 import { SITE, whatsappUrl } from "@/constant/siteData";
-import PlaceholderTag from "@/components/ui/PlaceholderTag";
 import FooterColumn, { footerLinkClass } from "./FooterColumn";
 
 const Item = ({
@@ -18,7 +17,7 @@ const Item = ({
   </li>
 );
 
-/** "Get in touch" column. Working hours is still marked to-be-supplied, as in the source design. */
+/** "Get in touch" column: address, phone, WhatsApp, email and working hours. */
 const FooterContact = () => (
   <FooterColumn title="Get in touch">
     <Item icon={<MapPin aria-hidden="true" />}>{SITE.address}</Item>
@@ -38,7 +37,7 @@ const FooterContact = () => (
       </a>
     </Item>
     <Item icon={<Clock aria-hidden="true" />}>
-      Working hours <PlaceholderTag />
+      Working hours: {SITE.hours}
     </Item>
   </FooterColumn>
 );

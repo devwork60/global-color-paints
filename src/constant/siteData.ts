@@ -1,6 +1,7 @@
 export const SITE = {
   name: "Global Colors Company",
   address: "Rawat Industrial Estate, Rawalpindi",
+  hours: "9am to 9pm",
   phone: "0327-5001444",
   phoneHref: "tel:03275001444",
   /** The same number in international format (no + or spaces), which is what wa.me links need. */

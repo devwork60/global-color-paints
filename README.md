@@ -40,4 +40,5 @@ Spam protection: a hidden bot-trap field, plus at most 5 enquiries per visitor p
 
 ## Known gaps
 
-- The footer still shows a "to be supplied" tag for the working hours. This comes from the source design and needs client content.
+- The four sister-brand panels still say "Range to be confirmed", and the product range note says the brand mapping is pending. Both are open items for the client.
+- Social links: Instagram still points to `homestylepaints`; confirm it is the company account.
