@@ -282,11 +282,15 @@
     display: none !important;
   }
 
-  /* Phones: smaller body text, and room for the fixed quick-contact bar when the page has one. */
+  /* Phones: smaller body text. */
   @media (max-width: 640px) {
     body {
       font-size: 16px;
     }
+  }
+
+  /* Phones and tablets: room for the fixed quick-contact bar when the page has one. */
+  @media (max-width: 959.98px) {
     body:has(nav[aria-label="Quick contact"]) {
       padding-bottom: calc(72px + env(safe-area-inset-bottom, 0px));
     }

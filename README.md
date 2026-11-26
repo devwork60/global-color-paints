@@ -40,5 +40,5 @@ Spam protection: a hidden bot-trap field, plus at most 5 enquiries per visitor p
 
 ## Known gaps
 
-- The four sister-brand panels still say "Range to be confirmed", and the product range note says the brand mapping is pending. Both are open items for the client.
+- The product range note on the page says the brand mapping is still pending. This is an open item for the client.
 - Social links: Instagram still points to `homestylepaints`; confirm it is the company account.

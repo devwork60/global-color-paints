@@ -86,5 +86,6 @@ export const ABOUT_CTA = {
   title: "Let's colour your next project.",
   text: "Talk to us about your next home, building or development. We will be happy to discuss your requirements.",
   phone: { label: "0327-5001444", href: "tel:03275001444" },
+  whatsapp: { label: "WhatsApp", message: "Hello Global Colors, I would like to discuss my project." },
   email: { label: "Email us", href: "mailto:contact@globalcolorscompany.com" },
 };

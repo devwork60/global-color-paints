@@ -1,15 +1,30 @@
+import Image from "next/image";
 import type { BrandMiniPanelData } from "@/constant/landingPage/brandsSectionData";
 import Badge from "@/components/ui/Badge";
 import CardDesc from "@/components/typography/CardDesc";
 import CardHeading from "@/components/typography/CardHeading";
 
-/** Compact solid-colour panel for a sister brand. In a `group/row` container, the hovered panel
+/** Compact photo panel for a sister brand, fading into the brand colour at the bottom. In a `group/row` container, the hovered panel
     grows and its siblings shrink, like the photo panel above. */
 const BrandMiniPanel = ({ panel }: { panel: BrandMiniPanelData }) => (
   <div
     style={{ backgroundColor: panel.color }}
     className="group/panel relative isolate min-w-0 flex-1 overflow-hidden rounded-panel text-white no-underline transition-[flex] duration-700 ease-brand before:absolute before:-top-[70px] before:-right-[70px] before:-z-10 before:size-[230px] before:rounded-full before:bg-white/10 before:transition-transform before:duration-[800ms] before:ease-brand before:content-[''] hover:before:scale-[1.55] max-md:h-[230px] max-md:flex-none md:hover:flex-[1.35] md:group-hover/row:[&:not(:hover)]:flex-[.8]"
   >
+    <Image
+      src={panel.image}
+      alt={panel.imageAlt}
+      fill
+      sizes="(min-width: 960px) 25vw, 100vw"
+      className="-z-20 object-cover transition-transform duration-[1200ms] ease-brand group-hover/panel:scale-[1.06]"
+    />
+    <div
+      aria-hidden="true"
+      className="absolute inset-0 -z-10"
+      style={{
+        background: `linear-gradient(180deg, color-mix(in srgb, ${panel.color} 0%, transparent) 22%, color-mix(in srgb, ${panel.color} 90%, transparent) 58%, ${panel.color} 100%)`,
+      }}
+    />
     <div className="absolute top-6 right-[26px] left-[26px] flex items-center justify-between">
       <Badge>{panel.badge}</Badge>
     </div>

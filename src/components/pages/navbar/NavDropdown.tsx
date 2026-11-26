@@ -39,14 +39,18 @@ const NavDropdown = ({ children }: { children: React.ReactNode }) => {
       >
         Our Brands <ChevronDown aria-hidden="true" className="size-[1em] stroke-[1.75]" />
       </button>
+      {/* The wrapper starts right under the button and carries 10px of transparent padding, so the pointer
+          stays "inside" the menu while it crosses the gap and the menu does not close on the way. */}
       <div
         className={clsx(
-          "invisible absolute top-[calc(100%+14px)] left-1/2 grid w-[660px] -translate-x-1/2 translate-y-1.5 grid-cols-2 gap-2.5 rounded-[20px] border border-line bg-white p-3 text-charcoal opacity-0 shadow-[0_30px_60px_-24px_rgba(38,35,34,.3)] transition duration-[220ms]",
+          "invisible absolute top-[calc(100%+0px)] left-1/2 w-[660px] -translate-x-1/2 translate-y-1.5 bg-transparent pt-2.5 opacity-0 transition duration-[220ms]",
           "group-focus-within/dd:visible group-focus-within/dd:translate-y-0 group-focus-within/dd:opacity-100 group-hover/dd:visible group-hover/dd:translate-y-0 group-hover/dd:opacity-100",
           open && "visible translate-y-0 opacity-100"
         )}
       >
-        {children}
+        <div className="grid grid-cols-2 gap-2.5 rounded-[20px] border border-line bg-white p-3 text-charcoal shadow-[0_30px_60px_-24px_rgba(38,35,34,.3)]">
+          {children}
+        </div>
       </div>
     </div>
   );

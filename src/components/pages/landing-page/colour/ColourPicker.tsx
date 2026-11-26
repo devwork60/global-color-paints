@@ -57,7 +57,7 @@ const ColourPicker = ({
               aria-pressed={selected === i}
               onClick={() => onShade(i)}
               className={clsx(
-                "relative aspect-[3/4] cursor-pointer rounded-md border-0 p-0 max-sm:nth-[n+41]:hidden max-sm:nth-[n+41]:hidden transition duration-[250ms] ease-brand hover:-translate-y-1 aria-pressed:-translate-y-1 aria-pressed:outline-2 aria-pressed:outline-offset-[3px] aria-pressed:outline-white",
+                "relative aspect-[3/4] cursor-pointer rounded-md border-0 p-0 transition duration-[250ms] ease-brand hover:-translate-y-1 aria-pressed:-translate-y-1 aria-pressed:outline-2 aria-pressed:outline-offset-[3px] aria-pressed:outline-white",
                 dimmed && "opacity-[.18]"
               )}
             />

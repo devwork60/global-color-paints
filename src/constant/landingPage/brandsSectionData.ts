@@ -40,15 +40,17 @@ export interface BrandMiniPanelData {
   name: string;
   tagline: string;
   color: string;
+  image: string;
+  imageAlt: string;
 }
 
-/** The four sister brands with their brand lines. Their product ranges are still to be confirmed by the client. */
+/** The four sister brands with their brand lines. */
 export const BRAND_MINI_PANELS: BrandMiniPanelData[] = [
-  { id: "bestwall", name: "BestWall", tagline: "Better Walls. Better Living.", color: "var(--b-bestwall)" },
-  { id: "tylac", name: "Tylac", tagline: "Built for Lasting Beauty.", color: "var(--b-tylac)" },
-  { id: "expresso", name: "Expresso", tagline: "Bring Colour to Life.", color: "var(--b-expresso)" },
-  { id: "ibex", name: "IBEX", tagline: "Strength in Every Coat.", color: "var(--b-ibex)" },
+  { id: "bestwall", name: "BestWall", tagline: "Better Walls. Better Living.", color: "var(--b-bestwall)", image: "/assets/images/brands/bestwall.jpg", imageAlt: "A bright teal living room with a soft sofa and plants" },
+  { id: "tylac", name: "Tylac", tagline: "Built for Lasting Beauty.", color: "var(--b-tylac)", image: "/assets/images/brands/tylac.jpg", imageAlt: "A living room with a deep purple feature wall" },
+  { id: "expresso", name: "Expresso", tagline: "Bring Colour to Life.", color: "var(--b-expresso)", image: "/assets/images/brands/expresso.jpg", imageAlt: "A warm living room with brown leather sofas and wood tones" },
+  { id: "ibex", name: "IBEX", tagline: "Strength in Every Coat.", color: "var(--b-ibex)", image: "/assets/images/brands/ibex.jpg", imageAlt: "A room with a deep blue wall, bookshelves and a sideboard" },
 ].map((brand) => ({
   ...brand,
-  badge: "Range to be confirmed",
+  badge: "Decorative range",
 }));
